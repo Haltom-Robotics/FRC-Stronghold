@@ -75,14 +75,15 @@ public class RobotMap {
         driveLeft2 = new VictorSP(1);
         driveRight2 = new VictorSP(3);
         
-        driverobotDrive = new RobotDrive(driveLeft, driveLeft2, driveRight, driveRight2);
+        driverobotDrive = new RobotDrive(driveLeft2, driveLeft, driveRight2, driveRight);
         
         driverobotDrive.setSafetyEnabled(true);
         driverobotDrive.setExpiration(0.1);
         driverobotDrive.setSensitivity(0.5);
         driverobotDrive.setMaxOutput(1.0);
 
-        //driverobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+        driverobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+        driverobotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
         pitchTalonL = new CANTalon(3);
         pitchTalonR = new CANTalon(4);
 
@@ -93,7 +94,7 @@ public class RobotMap {
         pitchPitchControl.setExpiration(0.1);
         pitchPitchControl.setSensitivity(0.5);
         pitchPitchControl.setMaxOutput(1.0);
-/*
+
         launcherTalonLauncherL = new CANTalon(1);
         //LiveWindow.addActuator("Launcher", "TalonLauncherL", launcherTalonLauncherL);
         launcherTalonLauncherL.reverseOutput(true);
@@ -138,7 +139,7 @@ public class RobotMap {
         } catch (com.ni.vision.VisionException e) {
         	System.out.println("Camera not found -- exception: " + e);
         }
-*/        
+      
         pitchTalonR.setFeedbackDevice(FeedbackDevice.QuadEncoder);
         pitchTalonR.reverseSensor(false);
         pitchTalonR.configEncoderCodesPerRev(497);
