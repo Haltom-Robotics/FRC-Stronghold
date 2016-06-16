@@ -73,8 +73,13 @@ public class Pitch extends Subsystem {
     }
     
     public void adjustPitch(GenericHID joystick) {
-    	adjustPitchPID(0);
-    	/*
+    	//The robot will now remain flat when not aiming.
+    	//Go to LaunchBall.java to see where adjustPitchPID gets called for aiming and launching the ball.
+    	//Go to Vision.java to change the values of the angle for aiming.
+    	if (!Robot.isAiming)
+    		adjustPitchPID(0);
+    	/*This code is not used anymore.
+    	 *It had been used for adjusting the pitch with the triggers.
     	double LT = joystick.getRawAxis(2);
     	double RT = joystick.getRawAxis(3);
     	talonL.changeControlMode(TalonControlMode.PercentVbus);

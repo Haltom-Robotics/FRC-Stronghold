@@ -79,7 +79,7 @@ public class LaunchBall extends Command {
     	} catch (java.lang.NullPointerException e) {
     		
     	}
-    	
+    	Robot.isAiming = true;
     	if (Robot.vision.goalsFound > 0)
     	{
     		Robot.pitch.adjustPitchPID(Robot.vision.calcAngle());
@@ -104,6 +104,7 @@ public class LaunchBall extends Command {
     	Robot.launcher.setLauncher(0);
     	Robot.pitch.stop();
     	Robot.drive.stop();
+    	Robot.isAiming = false;
     }
 
     // Called when another command which requires one or more of the same

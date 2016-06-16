@@ -112,20 +112,25 @@ public class Vision {
     	 */
     	double width = calcWidth(findBestGoal());
     	System.out.println("CalcWidth: " + width);
+    	/*
+    	 * All angle values and calcWidth pairs need testing.
+    	 * As of June 16th, I have set all values to a low number for testing purposes.
+    	 * The original assumed values are in the comments to the right.
+    	 */
     	if (width <= 72)
-    		return 1350;
+    		return 100;			//Smallest angle value: 1350
     	else if (width <= 79)
-    		return 1400;
+    		return 100;			//return 1400;
     	else if (width <= 84)
-    		return 1450;
+    		return 100;			//return 1450;
     	else if (width <= 89)
-    		return 1500;
+    		return 100;			//return 1500;
     	else if (width <= 99)
-    		return 1600;
+    		return 100;			//return 1600;
     	else if (width <= 115)
-    		return 1700;
+    		return 100;			//return 1700;
     	else
-    		return SmartDashboard.getNumber("Angle", 1700.);
+    		return SmartDashboard.getNumber("Angle", 100.);
     }
 
 }

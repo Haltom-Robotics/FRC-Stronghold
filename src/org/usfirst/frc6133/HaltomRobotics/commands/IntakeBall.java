@@ -42,6 +42,7 @@ public class IntakeBall extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.launcher.setLauncher(-1 * .6);
+    	Robot.isAiming = false;
     }
 
     // Called repeatedly when this Command is scheduled to run

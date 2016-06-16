@@ -94,7 +94,7 @@ public class RobotMap {
         pitchPitchControl.setExpiration(0.1);
         pitchPitchControl.setSensitivity(0.5);
         pitchPitchControl.setMaxOutput(1.0);
-
+        pitchTalonR.setEncPosition(0);
         launcherTalonLauncherL = new CANTalon(1);
         //LiveWindow.addActuator("Launcher", "TalonLauncherL", launcherTalonLauncherL);
         launcherTalonLauncherL.reverseOutput(true);
