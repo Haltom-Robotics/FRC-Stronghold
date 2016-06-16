@@ -375,7 +375,7 @@ public class AutonomousCommand extends Command {
     	//System.out.println("RUN RAMP");
     	//TODO: Set timePhase1 to be the amount of time it takes to reach the Ramparts
     	//		and set timePhase2 to be the amount of time it takes to cross the Ramparts.
-    	System.out.print("Run RoughTerrain");
+    	System.out.println("Run RoughTerrain");
     	double getTime = 15 - Timer.getMatchTime();
     	
     	
@@ -391,11 +391,9 @@ public class AutonomousCommand extends Command {
 	    	RobotMap.driveRight.set(0);
 			done_Defense = true;
 		} else if (getTime >= timePhase3) {
-			Robot.pitch.adjustPitchPID(500);			//TODO:	Set the PID amount based on where we believe we need it to make the shot.
 			RobotMap.driveLeft.set(.5);
 	    	RobotMap.driveRight.set(.5);
 		} else if (getTime >= timePhase2) {
-			Robot.pitch.adjustPitchPID(-1500);			//TODO:	Set the PID amount based on where we believe we need it to make the shot.
 			RobotMap.driveLeft.set(1);
 	    	RobotMap.driveRight.set(1);
 		} else if (getTime >= timePhase1)	{
@@ -408,6 +406,8 @@ public class AutonomousCommand extends Command {
             //RobotMap.pitchTalonR.setEncPosition(0);
     		RobotMap.driveLeft.set(.2);
         	RobotMap.driveRight.set(.2);
+        	RobotMap.driveLeft2.set(-.2);
+        	RobotMap.driveRight2.set(-.2);
 						//TODO: Set the PID amount based on the needed angle for climbing the ramparts
     	}
 

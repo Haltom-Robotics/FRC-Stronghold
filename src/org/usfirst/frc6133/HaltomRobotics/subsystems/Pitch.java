@@ -73,6 +73,8 @@ public class Pitch extends Subsystem {
     }
     
     public void adjustPitch(GenericHID joystick) {
+    	adjustPitchPID(0);
+    	/*
     	double LT = joystick.getRawAxis(2);
     	double RT = joystick.getRawAxis(3);
     	talonL.changeControlMode(TalonControlMode.PercentVbus);
@@ -109,6 +111,7 @@ public class Pitch extends Subsystem {
     		}
     			
     	}
+    	*/
     }
     
     public void stop() {
@@ -122,7 +125,7 @@ public class Pitch extends Subsystem {
         talonR.changeControlMode(TalonControlMode.Position);
         talonR.set(target/-1988);
         talonL.set(talonR.getOutputVoltage()/-12.0);
-        //System.out.println("EncPos: " + talonR.getEncPosition() + "::Sensor: " + talonR.get() + "::RawPos: " + talonR.getPosition() + "::Setpoint: " + talonR.getSetpoint());
+        System.out.println("EncPos: " + talonR.getEncPosition() + "::Sensor: " + talonR.get() + "::RawPos: " + talonR.getPosition() + "::Setpoint: " + talonR.getSetpoint());
         
         talonR.setAllowableClosedLoopErr(10);
         

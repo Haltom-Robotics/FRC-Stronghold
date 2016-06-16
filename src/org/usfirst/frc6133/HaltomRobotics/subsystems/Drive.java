@@ -71,7 +71,7 @@ public class Drive extends Subsystem {
     	if (bestGoal == -1)
     		return false;
     	int adjust = Robot.vision.goals[bestGoal].findCenter() - 320;
-    	if (Math.abs(adjust) < 10)
+    	if (Math.abs(adjust) < 10)	//10px from center is threshold.
     	{
     		left.set(0);
     		left2.set(0);

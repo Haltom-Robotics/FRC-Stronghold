@@ -61,7 +61,11 @@ public class LaunchBall extends Command {
     	RobotMap.launcherTalonLauncherR.setD(0);
     	RobotMap.launcherTalonLauncherR.setEncPosition(0);*/
     	//Robot.launcher.setPIDLauncher(m_targetSpeed);
-    	Robot.vision.getTableValues();
+    	try {
+    		Robot.vision.getTableValues();
+    	} catch (java.lang.NullPointerException e) {
+    		
+    	}
         
         
     	
@@ -79,14 +83,10 @@ public class LaunchBall extends Command {
     	if (Robot.vision.goalsFound > 0)
     	{
     		Robot.pitch.adjustPitchPID(Robot.vision.calcAngle());
-    		//System.out.println(Robot.vision.calcAngle());
+    		System.out.println("CalcAngle: " + Robot.vision.calcAngle());
     	}
     	Robot.launcher.setPIDLauncher(RobotMap.SPEED);
 
-    	//if (++loops >= 100) {
-    	//	loops = 0;
-    	//	System.out.println("\tspd: " + RobotMap.launcherTalonLauncherR.getSpeed() + "\terr: " + RobotMap.launcherTalonLauncherR.getClosedLoopError());
-    	//}
     }
 
     // Make this return true when this Command no longer needs to run execute()
