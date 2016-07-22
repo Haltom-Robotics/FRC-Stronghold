@@ -43,15 +43,20 @@ public class AdjustPitch extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.pitch.adjustPitch(Robot.oi.getJoystick());
-    	/*
+    	//NOTE: The line below is blocked out while we are debuggin Pitch.  It should be unblocked once Pitch is fixed.
+    	//Robot.pitch.adjustPitch(Robot.oi.getJoystick());
+    	
+    	//NOTE: The remaining part of this execute function is dedicated to debuggin the Pitch
+    	//You can comment out all of this once the problem has been solved.
+    	Robot.pitch.adjustPitchPID((double)RobotMap.pitchChooser.getSelected());
+    	
     	if (++loops >= 50) {
     		loops = 0;
     		double motorOutputL = RobotMap.pitchTalonL.getOutputVoltage() / RobotMap.pitchTalonL.getBusVoltage();
     		double motorOutputR = RobotMap.pitchTalonR.getOutputVoltage() / RobotMap.pitchTalonR.getBusVoltage();
     		System.out.println("\tLpos: " + RobotMap.pitchTalonL.getEncPosition() + "\tLout: " + motorOutputL);
     		System.out.println("\tRpos: " + RobotMap.pitchTalonR.getEncPosition() + "\tRout: " + motorOutputR);
-    	}*/
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
