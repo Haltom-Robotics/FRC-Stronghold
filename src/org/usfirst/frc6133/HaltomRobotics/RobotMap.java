@@ -85,7 +85,7 @@ public class RobotMap {
 
         driverobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
         driverobotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
-        pitchTalonL = new CANTalon(3);
+        pitchTalonL = new CANTalon(5);
         pitchTalonR = new CANTalon(4);
 
         
@@ -96,7 +96,7 @@ public class RobotMap {
         pitchPitchControl.setSensitivity(0.5);
         pitchPitchControl.setMaxOutput(1.0);
         pitchTalonR.setEncPosition(0);
-        launcherTalonLauncherL = new CANTalon(1);
+        launcherTalonLauncherL = new CANTalon(7);
         //LiveWindow.addActuator("Launcher", "TalonLauncherL", launcherTalonLauncherL);
         launcherTalonLauncherL.reverseOutput(true);
         
@@ -113,7 +113,7 @@ public class RobotMap {
         armTalonL = new CANTalon(6);
         //LiveWindow.addActuator("Arm", "TalonL", armTalonL);
         
-        armTalonR = new CANTalon(5);
+        armTalonR = new CANTalon(3);
         //LiveWindow.addActuator("Arm", "TalonR", armTalonR);
         
         //armArmControl = new RobotDrive(armTalonL, armTalonR);
@@ -127,7 +127,7 @@ public class RobotMap {
         elevatorTalonL = new CANTalon(8);
         //LiveWindow.addActuator("Elevator", "TalonL", elevatorTalonL);
         
-        elevatorTalonR = new CANTalon(7);
+        elevatorTalonR = new CANTalon(1);
         //LiveWindow.addActuator("Elevator", "TalonR", elevatorTalonR);
         
 
@@ -180,16 +180,16 @@ public class RobotMap {
         
         SmartDashboard.putData("Defense Chooser", chooser);
         
-        pitchChooser = new SendableChooser();
+       // pitchChooser = new SendableChooser();
         //NOTE: You can adjust these values to play with the range of the input values.
         //Begin by using these values to determine what magnitude of value is approximately the "max"
-        pitchChooser.addDefault("0", 0);
-        pitchChooser.addObject("1", 1);
-        pitchChooser.addObject("10", 10);
-        pitchChooser.addObject("100", 100);
-        pitchChooser.addObject("1000", 1000);
+        //pitchChooser.addDefault("0", 0);
+       // pitchChooser.addObject("1", 1);
+       // pitchChooser.addObject("10", 10);
+       // pitchChooser.addObject("100", 100);
+       // pitchChooser.addObject("1000", 1000);
 
-        SmartDashboard.putData("Pitch Angle Chooser", pitchChooser);
+       // SmartDashboard.putData("Pitch Angle Chooser", pitchChooser);
 
         
         

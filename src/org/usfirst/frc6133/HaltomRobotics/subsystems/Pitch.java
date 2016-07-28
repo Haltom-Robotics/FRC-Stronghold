@@ -76,8 +76,8 @@ public class Pitch extends Subsystem {
     	//The robot will now remain flat when not aiming.
     	//Go to LaunchBall.java to see where adjustPitchPID gets called for aiming and launching the ball.
     	//Go to Vision.java to change the values of the angle for aiming.
-    	if (!Robot.isAiming)
-    		adjustPitchPID(0);
+    	//if (!Robot.isAiming)
+    		//adjustPitchPID(0);
     	/*This code is not used anymore.
     	 *It had been used for adjusting the pitch with the triggers.
     	double LT = joystick.getRawAxis(2);
@@ -140,7 +140,7 @@ public class Pitch extends Subsystem {
     
     public boolean isPitchReady()
     {
-    	if (talonR.getClosedLoopError() <= 10)
+    	if (talonR.getClosedLoopError() <= 20)
     		return true;
     	//System.out.println("Pitch not ready");
     	return false;

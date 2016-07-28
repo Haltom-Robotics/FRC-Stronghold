@@ -48,7 +48,7 @@ public class AdjustPitch extends Command {
     	
     	//NOTE: The remaining part of this execute function is dedicated to debuggin the Pitch
     	//You can comment out all of this once the problem has been solved.
-    	Robot.pitch.adjustPitchPID((double)RobotMap.pitchChooser.getSelected());
+    	Robot.pitch.adjustPitchPID(1630);
     	
     	if (++loops >= 50) {
     		loops = 0;

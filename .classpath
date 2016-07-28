@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="var" path="WPILib" sourcepath="wpilib.sources"/>
-	<classpathentry kind="var" path="NetworkTable" sourcepath="networktables.sources"/>
+	<classpathentry kind="var" path="WPILib" sourcepath="wpilib.sources">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Developer/wpilib/java/current/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="NetworkTable" sourcepath="networktables.sources">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Developer/wpilib/java/current/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
