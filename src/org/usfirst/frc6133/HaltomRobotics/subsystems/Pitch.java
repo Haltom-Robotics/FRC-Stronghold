@@ -129,8 +129,10 @@ public class Pitch extends Subsystem {
     	talonL.changeControlMode(TalonControlMode.PercentVbus);
         talonR.changeControlMode(TalonControlMode.Position);
         talonR.set(target/-1988);
-        talonL.set(talonR.getOutputVoltage()/-12.0);
-        System.out.println("EncPos: " + talonR.getEncPosition() + "::Sensor: " + talonR.get() + "::RawPos: " + talonR.getPosition() + "::Setpoint: " + talonR.getSetpoint());
+        	talonL.set(0);
+        else
+        	talonL.set(talonR.getOutputVoltage()/-12.0);
+        //System.out.println("EncPos: " + talonR.getEncPosition() + "::Sensor: " + talonR.get() + "::RawPos: " + talonR.getPosition() + "::Setpoint: " + talonR.getSetpoint());
         
         talonR.setAllowableClosedLoopErr(10);
         
