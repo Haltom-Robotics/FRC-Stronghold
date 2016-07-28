@@ -129,7 +129,11 @@ public class Pitch extends Subsystem {
     	talonL.changeControlMode(TalonControlMode.PercentVbus);
         talonR.changeControlMode(TalonControlMode.Position);
         talonR.set(target/-1988);
+<<<<<<< HEAD
         if(Math.abs(talonR.getOutputVoltage())>1)
+=======
+        if (Math.abs(talonR.getOutputVoltage()) < 2)
+>>>>>>> origin/master
         	talonL.set(0);
         else
         	talonL.set(talonR.getOutputVoltage()/-12.0);
