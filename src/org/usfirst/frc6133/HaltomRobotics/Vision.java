@@ -118,19 +118,19 @@ public class Vision {
     	 * The original assumed values are in the comments to the right.
     	 */
     	if (width <= 72)
-    		return 100;			//Smallest angle value: 1350
+    		return 1350;			//Smallest angle value: 1350
     	else if (width <= 79)
-    		return 100;			//return 1400;
+    		return 1400;			//return 1400;
     	else if (width <= 84)
-    		return 100;			//return 1450;
+    		return 1450;			//return 1450;
     	else if (width <= 89)
-    		return 100;			//return 1500;
+    		return 1500;			//return 1500;
     	else if (width <= 99)
-    		return 100;			//return 1600;
+    		return 1600;			//return 1600;
     	else if (width <= 115)
-    		return 100;			//return 1700;
+    		return 1630;			//return 1700;
     	else
-    		return SmartDashboard.getNumber("Angle", 100.);
+    		return SmartDashboard.getNumber("Angle", 100);
     }
 
 }

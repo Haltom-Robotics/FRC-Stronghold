@@ -129,12 +129,13 @@ public class Pitch extends Subsystem {
     	talonL.changeControlMode(TalonControlMode.PercentVbus);
         talonR.changeControlMode(TalonControlMode.Position);
         talonR.set(target/-1988);
+        if(Math.abs(talonR.getOutputVoltage())>1)
         	talonL.set(0);
         else
         	talonL.set(talonR.getOutputVoltage()/-12.0);
         //System.out.println("EncPos: " + talonR.getEncPosition() + "::Sensor: " + talonR.get() + "::RawPos: " + talonR.getPosition() + "::Setpoint: " + talonR.getSetpoint());
         
-        talonR.setAllowableClosedLoopErr(10);
+        talonR.setAllowableClosedLoopErr(50);
         
     	
     	
@@ -142,7 +143,7 @@ public class Pitch extends Subsystem {
     
     public boolean isPitchReady()
     {
-    	if (talonR.getClosedLoopError() <= 20)
+    	if (talonR.getClosedLoopError() <= 50)
     		return true;
     	//System.out.println("Pitch not ready");
     	return false;

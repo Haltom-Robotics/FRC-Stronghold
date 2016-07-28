@@ -39,6 +39,7 @@ public class AdjustPitch extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.pitch.adjustPitchPID(1630);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -48,15 +49,15 @@ public class AdjustPitch extends Command {
     	
     	//NOTE: The remaining part of this execute function is dedicated to debuggin the Pitch
     	//You can comment out all of this once the problem has been solved.
-    	Robot.pitch.adjustPitchPID(1630);
+    	//Robot.pitch.adjustPitchPID(1630);
     	
-    	if (++loops >= 50) {
-    		loops = 0;
-    		double motorOutputL = RobotMap.pitchTalonL.getOutputVoltage() / RobotMap.pitchTalonL.getBusVoltage();
-    		double motorOutputR = RobotMap.pitchTalonR.getOutputVoltage() / RobotMap.pitchTalonR.getBusVoltage();
-    		System.out.println("\tLpos: " + RobotMap.pitchTalonL.getEncPosition() + "\tLout: " + motorOutputL);
-    		System.out.println("\tRpos: " + RobotMap.pitchTalonR.getEncPosition() + "\tRout: " + motorOutputR);
-    	}
+    	//if (++loops >= 50) {
+    		//loops = 0;
+    		//double motorOutputL = RobotMap.pitchTalonL.getOutputVoltage() / RobotMap.pitchTalonL.getBusVoltage();
+    		//double motorOutputR = RobotMap.pitchTalonR.getOutputVoltage() / RobotMap.pitchTalonR.getBusVoltage();
+    		//System.out.println("\tLpos: " + RobotMap.pitchTalonL.getEncPosition() + "\tLout: " + motorOutputL);
+    		///System.out.println("\tRpos: " + RobotMap.pitchTalonR.getEncPosition() + "\tRout: " + motorOutputR);
+    	//}
     }
 
     // Make this return true when this Command no longer needs to run execute()
